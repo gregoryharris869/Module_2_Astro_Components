@@ -1,8 +1,8 @@
 ---
-
+const { classes, ...rest } = Astro.props;
 ---
 
-<button class:list={["btn"]}>
+<button class:list={["btn", classes]} {...rest}>
   <slot />
 </button>
 
@@ -15,5 +15,6 @@
     cursor: pointer;
     border: none;
     padding: 4px 16px;
+    background: none;
   }
 </style>
