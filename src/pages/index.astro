@@ -6,7 +6,8 @@
 // const fakeHtml = `<h1>Hello World</h1>
 // <p>My name is Astro.</p>`;
 
-import data from "../data/cardData.json";
+import PricingCard from "../components/PricingCard.astro";
+import pricingCardData from "../data/cardData.json";
 ---
 
 <html lang="en">
@@ -18,12 +19,6 @@ import data from "../data/cardData.json";
     <title>Astro</title>
   </head>
   <body>
-    <!-- <Button id="my-btn" aria-label="Click me" variety="default" isBorderd -->
-    <!-- ><span>BUY</span> -->
-    <!-- <Icon name="cart" width={24} /> -->
-    <!-- </Button> -->
-    <!-- <Button id="my-btn" aria-label="Click me" variety="icon" isBorderd> -->
-    <!-- <Icon name="cart" width={24} /> -->
-    <!-- </Button> -->
+    {pricingCardData.map((card) => <PricingCard {...card} />)}
   </body>
 </html>
