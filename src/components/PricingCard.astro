@@ -1,6 +1,13 @@
 ---
+import { type HTMLAttributes } from "astro/types";
 import { Icon } from "astro-icon/components";
 import Button from "./Button.astro";
+import type { Card } from "../pages/index.astro";
+
+interface Props extends HTMLAttributes<"article"> {
+  data: Card;
+}
+const { data } = Astro.props;
 
 const {
   tier,
@@ -10,7 +17,7 @@ const {
   description,
   btn_text,
   features,
-} = Astro.props;
+} = data;
 ---
 
 <article class:list={[{ "dark-shadow": most_popular }]}>

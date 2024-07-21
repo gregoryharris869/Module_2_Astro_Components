@@ -1,4 +1,10 @@
 ---
+import { type HTMLAttributes } from "astro/types";
+import type { Card } from "@pages/index.astro";
+interface Props extends HTMLAttributes<"button"> {
+  classes?: string;
+  theme: Card["tier"];
+}
 const { classes, theme, ...rest } = Astro.props;
 ---
 
@@ -49,3 +55,12 @@ const { classes, theme, ...rest } = Astro.props;
     --local_color: var(--clr-accent-yellow);
   }
 </style>
+
+<!-- <script>
+  const btns = document.querySelectorAll("button");
+  btns.forEach((b) => {
+    b.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
+  });
+</script> -->
